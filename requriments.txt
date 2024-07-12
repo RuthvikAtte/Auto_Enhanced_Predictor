@@ -1,4 +1,0 @@
-smtplib
-pandas
-requests
-tkinter
