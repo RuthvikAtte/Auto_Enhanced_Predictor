@@ -45,7 +45,7 @@ def GPT():
 
     print(prompt)
 
-    openai.api_key = "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"
+    openai.api_key = "    YOUR_API_KEY"
 
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo-0125",
