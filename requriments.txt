@@ -1,0 +1,4 @@
+smtplib
+pandas
+requests
+tkinter
