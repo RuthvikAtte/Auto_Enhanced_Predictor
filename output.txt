@@ -1,0 +1,24 @@
+Warning: Your Kaggle API key is readable by other users on this system! To fix this, you can run 'chmod 600 /Users/ruthvikatte/.kaggle/kaggle.json'
+Warning: Looks like you're using an outdated API Version, please consider updating (server 1.6.7 / client 1.5.16)
+ref                                                      title                                       size  lastUpdated          downloadCount  voteCount  usabilityRating  
+-------------------------------------------------------  -----------------------------------------  -----  -------------------  -------------  ---------  ---------------  
+nelgiriyewithana/apple-quality                           Apple Quality                              170KB  2024-01-11 14:31:07          29323        585  1.0              
+varpit94/apple-stock-data-updated-till-22jun2021         APPLE Stock Data                           205KB  2022-03-25 16:13:47           4719         70  1.0              
+gauthamp10/apple-appstore-apps                           Apple AppStore Apps                        117MB  2021-10-14 07:28:30           3696         51  0.85294116       
+komalkhetlani/apple-iphone-data                          Apple iPhone Data                            3KB  2021-08-10 08:04:27           6980         39  0.8235294        
+tarunpaparaju/apple-aapl-historical-stock-data           Apple (AAPL) Historical Stock Data          49KB  2020-02-29 08:58:43          11238         76  1.0              
+meetnagadia/apple-stock-price-from-19802021              Apple Stock Price from  1980-2021          206KB  2022-06-21 06:19:03           5416         88  1.0              
+soheiltehranipour/apple-stock-20132018                   Apple Stock (2013-2018)                      7KB  2022-08-12 09:40:44           1092         38  0.875            
+tristan581/17k-apple-app-store-strategy-games            17K Mobile Strategy Games                    8MB  2019-08-26 08:22:16          24101        722  1.0              
+henryshan/apple-stock-price                              Apple Stock Price                          215KB  2023-12-06 12:00:48            805         38  1.0              
+seriousran/appletwittersentimenttexts                    apple_twitter_sentiment_texts               71KB  2020-05-14 03:19:25           2254         32  1.0              
+ranugadisansagamage/apple-stocks                         Apple Stocks                               206KB  2022-05-22 15:26:27            607         47  1.0              
+aleespinosa/apple-watch-and-fitbit-data                  Apple Watch and Fitbit data                700KB  2022-03-02 18:40:39           3727         50  0.88235295       
+hsmcaju/d-kap                                            Kashmiri Apple Plant Disease Dataset        27MB  2022-09-08 06:40:36           2656         52  0.875            
+achintyatripathi/yahoo-finance-apple-inc-aapl            Yahoo Finance Apple Inc. (AAPL)              9KB  2020-09-11 10:43:52           1790         51  0.9411765        
+suyashlakhani/apple-stock-prices-20152020                Apple Stock Prices (2015-2020)              67KB  2021-07-08 14:33:09           2148         25  1.0              
+gauravtopre/apple-inc-stock-historical-prices            APPLE Stock Prices                         244KB  2023-10-03 13:08:49            691         23  0.88235295       
+samuelcortinhas/apples-or-tomatoes-image-classification  Apples or tomatoes - image classification    2MB  2022-12-04 11:43:31           3436         62  0.875            
+piantic/plantpathology-apple-dataset                     PlantPathology Apple Dataset               813MB  2020-04-24 13:45:22           1461         40  0.5882353        
+rafsunahmad/apple-stock-price                            Apple Stock Price till 2023 December        71KB  2023-12-19 16:23:59           1498         32  1.0              
+prasoonkottarathil/apple-lifetime-stocks-dataset         Apple Historical Dataset                   192KB  2019-11-26 06:06:55           1557         32  1.0              
