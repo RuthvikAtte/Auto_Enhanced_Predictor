@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VS Code settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Output files and logs
+output.txt
+enhanced_data.csv
+Enhanced_Data_CSVs/
+
+# Virtual environment folders
+env/
+.venv/
+venv/
+
+# Kaggle API credentials (make sure this is not tracked!)
+kaggle.json

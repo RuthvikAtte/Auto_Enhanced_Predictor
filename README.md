@@ -1,13 +1,134 @@
-# Auto_Enhanced_Predictor
+# 🦨 Auto Column Generator
 
-Create an openai-env with your API Key
+> AI-powered Kaggle dataset enhancer for Machine Learning and data exploration 🚀
 
-# This project takes data and adds extra unique columns to the pandas data frame to make better feature engineering decisions. 
+&#x20; &#x20;
 
-The Search_to_download.py takes in a search word and returns a Kaggle .txt file with all of the links to the data repos and manually parses it into a Pandas Dataframe
+---
 
-The Select_and_download.py imports the class in Search_to_download.py, uses the dataframe to download the CSV files, and automatically unzips them for use. 
+## ✨ Features
 
-The Add_Columns.py connects to GPT 3.5 and prompts it to create X new and unique and meaningful columns using the previous columns as variables to create more meaningful data for Machine learning ( classification or regression ) problems and show the Python code that makes the X many new and unique columns. Only generate Python code for adding data frame columns to df without creating a dataframe and without any comments. with this prompt, the code uses the string of commands and executes it to add the column created by GPT 3.5 
+- 🔍 Search Kaggle datasets from the terminal
+- 📦 Automatically download and extract CSVs
+- 🧠 Use GPT to generate new ML features/columns
+- 📊 Auto-generate matplotlib/seaborn visualizations
+- 📀 Save enhanced DataFrames to CSV
+- 🛉 Automatically clean up temporary files
+- 💻 Beautiful terminal interface with [rich](https://github.com/Textualize/rich) and [yaspin](https://github.com/pavdmyt/yaspin)
 
-Then using the Pearson correlation coefficient heat map I am trying to use either a GPT 3.5 prompt or a graph nn to see what columns are best fitted with each other and which columns are not necessary and would cause the ML algorithm's accuracy to go down.
+---
+
+## ⚙️ Setup Instructions
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/yourusername/auto-column-generator.git
+   cd auto-column-generator
+   ```
+
+2. **Install Requirements**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Set Up Environment Variables**
+
+   Create a `.env` file with your [OpenAI API key](https://platform.openai.com/account/api-keys):
+
+   ```env
+   OPENAI_API_KEY=your_openai_key_here
+   ```
+
+4. **Set Up Kaggle CLI**
+
+   - Install the CLI:
+
+     ```bash
+     pip install kaggle
+     ```
+
+   - Place your `kaggle.json` API key in the correct location:
+
+     ```bash
+     mkdir -p ~/.kaggle
+     cp kaggle.json ~/.kaggle/
+     chmod 600 ~/.kaggle/kaggle.json
+     ```
+
+   - Test it:
+
+     ```bash
+     kaggle datasets list -s "bitcoin"
+     ```
+
+---
+
+## 🚀 Usage
+
+Run the tool using:
+
+```bash
+python Auto_Column_Generator.py
+```
+
+You'll be guided through:
+
+1. Keyword search for Kaggle datasets
+2. Selecting a dataset
+3. Loading the CSV
+4. Generating enhanced columns via GPT
+5. Visualizing the dataset
+6. Saving the final DataFrame if desired
+
+---
+
+## 📂 Output
+
+- Enhanced CSVs are saved to: `Enhanced_Data_CSVs/`
+- Terminal previews show new columns highlighted
+- Visuals are displayed using matplotlib/seaborn
+
+---
+
+## 🛀 Tech Stack
+
+- Python 3.8+
+- [OpenAI API](https://platform.openai.com/)
+- Kaggle CLI
+- `pandas`, `matplotlib`, `seaborn`
+- `rich` for terminal UI
+- `yaspin` for spinners and loaders
+
+---
+
+## 🧪 Example Output
+
+```
+Enter a keyword: stocks
+Enter index of dataset: 1
+
+👋 Loaded DataFrame
+Generating 10 new columns using GPT...
+...
+📊 How many visualizations do you want? 5
+
+📂 Saved enhanced DataFrame to Enhanced_Data_CSVs/enhanced_stocks.csv
+```
+
+---
+
+## 📌 TODO
+
+- ***
+
+## 🧠 Credits
+
+Made with ❤️ using OpenAI, Kaggle, Python, and coffee.
+
+---
+
+## 📄 License
+
+MIT License
