@@ -70,7 +70,7 @@
 Run the tool using:
 
 ```bash
-python Auto_Column_Generator.py
+python3 Auto_Column_Generator.py
 ```
 
 You'll be guided through:
