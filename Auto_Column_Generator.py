@@ -98,14 +98,16 @@ def run_pipeline():
             f"to create more meaningful data for a Machine learning Classification problem and show the python code that creates "
             f"the {num_cols} new and unique columns. Only generate python code for adding dataframe columns to df "
             f"without creating a DataFrame or redefining df. Do not use `data = {{...}}` or `df = pd.DataFrame(...)`."
+            f"DO NOT create new variables. Have all logic in one line"
         )
+        print(f"Promt: {prompt}")
 
         with yaspin(
             text="🧠 Generating new columns with GPT...", color="cyan"
         ) as spinner:
             client = OpenAI(api_key=api_key)
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo-0125",
+                model="gpt-4o",
                 messages=[{"role": "user", "content": prompt}],
             )
             spinner.ok("✅")
@@ -135,23 +137,40 @@ def run_pipeline():
     plt.show()
 
     def GPT_visualize(num_graphs=5):
-        prompt = (
-            "Given the following dataframe's column names and data types:\n"
-            + str(df.dtypes)
-            + f"\n\nGenerate Python matplotlib and seaborn code using this dataframe (named `df`) to create approximately {num_graphs} meaningful visualizations and extract insights. "
+
+        prompt = "Using this data frame with columns and its unique values = "
+        for x in df:
+            unique_values = df[x].unique()
+            if df[x].dtype in ["int64", "float64"] and len(unique_values) > 20:
+                # For numeric columns with too many unique values, only include the dtype
+                prompt += f"{x}: {df[x].dtype}, "
+            else:
+                # For categorical columns with too many unique values, show only the first 5 unique values
+                if len(unique_values) > 5:
+                    prompt += f"{x}: {unique_values[:5]}, "
+                else:
+                    # For columns with 5 or fewer unique values, show all unique values
+                    prompt += f"{x}: {unique_values}, "
+
+        prompt += (
+            f"\n\nGenerate Python matplotlib and seaborn code using this dataframe (named `df`) to create approximately {num_graphs} meaningful visualizations and extract insights. "
             "Only generate valid Python code. Do not include markdown, titles, or explanations — only code that could directly run in Python. "
             "Do not include import statements or redefine the dataframe. "
             "Assume df already exists. Do not include comments. "
             "Limit your output to a maximum of 40 lines of executable Python code. "
             "Only use df.corr(numeric_only=True) instead of df.corr()."
+            "Always give python code to display the charts after each chart creation."
+            "Always have a very detailed comment before the python code on what you did and why for the user to understand."
+            "Always have a Title for each chart."
         )
 
+        print(f"PROMPT 2 {prompt}")
         with yaspin(
             text="📊 Generating visualizations with GPT...", color="cyan"
         ) as spinner:
             client = OpenAI(api_key=api_key)
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo-0125",
+                model="gpt-4o",
                 messages=[{"role": "user", "content": prompt}],
             )
             spinner.ok("✅")
@@ -201,6 +220,10 @@ def run_pipeline():
     num_viz = int(num_viz) if num_viz.isdigit() and int(num_viz) > 0 else 5
 
     viz_code = GPT_visualize(num_viz)
+    # console.print(" UNCLEANED DATA FROM GPT")
+    # console.print("_______________________________________")
+    # console.print(viz_code)
+    # console.print("_______________________________________")
     safe_exec_viz(viz_code, df)
 
     # Option to save enhanced DataFrame

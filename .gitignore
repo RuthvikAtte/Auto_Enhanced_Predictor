@@ -18,7 +18,7 @@ __pycache__/
 # Output files and logs
 output.txt
 enhanced_data.csv
-Enhanced_Data_CSVs/
+
 
 # Virtual environment folders
 env/
